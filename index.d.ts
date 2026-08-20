@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,17 +16,22 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { ArrayLike } from '@stdlib/types/array';
+import { ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Convert a list of values (scalars and/or ndarrays) to ndarrays having at least one dimension.
+* Converts a list of values (scalars and/or ndarrays) to ndarrays having at least one dimension.
 *
-* @module @stdlib/ndarray-base-atleast1d
+* @param arrays - array-like object containing a list of scalars and/or ndarrays
+* @returns an array of ndarrays
 *
 * @example
 * var array = require( '@stdlib/ndarray-array' );
 * var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
-* var atleast1d = require( '@stdlib/ndarray-base-atleast1d' );
 *
 * var x = array( [ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ] ] );
 * // returns <ndarray>[ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ] ]
@@ -37,12 +42,9 @@
 * var out = atleast1d( [ x, y ] );
 * // returns [ <ndarray>, <ndarray> ]
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function atleast1d( arrays: ArrayLike<any> ): Array<ndarray>;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = atleast1d;
